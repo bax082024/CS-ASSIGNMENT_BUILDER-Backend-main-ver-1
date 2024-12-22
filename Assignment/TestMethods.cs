@@ -95,11 +95,12 @@ public class TestMethods : AssignmentBase
     public bool IsNotFalse(bool value)
     {
         return value;
-        throw new NotImplementedException();
+        // throw new NotImplementedException();
     }
     public List<Generics> GenericTypeMethod(Generics e, Generics t)
     {
-        throw new NotImplementedException();
+        return new List<Generics>{};
+        // throw new NotImplementedException();
     }
     /// <summary>
     /// Can enter if the age is greater than or equal to 18, 

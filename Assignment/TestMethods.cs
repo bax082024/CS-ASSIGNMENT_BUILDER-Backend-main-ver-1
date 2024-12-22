@@ -26,7 +26,8 @@ public class TestMethods : AssignmentBase
     /// <exception cref="NotImplementedException"></exception>
     public string[] StringArrayMethod(string[] arr)
     {
-        throw new NotImplementedException();
+        return new string[255]; 
+        //throw new NotImplementedException();
     }
     /// <summary>
     /// Return the sum of a + b

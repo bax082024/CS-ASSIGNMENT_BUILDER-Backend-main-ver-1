@@ -15,7 +15,8 @@ public class TestMethods : AssignmentBase
     /// <exception cref="NotImplementedException"></exception>
     public string StringMethod(string str)
     {
-        throw new NotImplementedException();
+        return str;
+        // throw new NotImplementedException();
     }
     /// <summary>
     /// Return a new string array

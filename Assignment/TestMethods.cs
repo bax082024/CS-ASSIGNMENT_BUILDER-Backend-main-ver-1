@@ -71,6 +71,7 @@ public class TestMethods : AssignmentBase
     /// <exception cref="NotImplementedException"></exception>
     public char CharMethod(char c)
     {
+        return c;
         throw new NotImplementedException();
     }
     /// <summary>

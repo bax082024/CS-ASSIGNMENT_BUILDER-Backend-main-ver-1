@@ -39,7 +39,7 @@ public class TestMethods : AssignmentBase
     public int AddIntMethod(int a, int b)
     {
         return a + b;
-        throw new NotImplementedException();
+        // throw new NotImplementedException();
     }
     /// <summary>
     /// Return the sum of a * b
@@ -51,7 +51,7 @@ public class TestMethods : AssignmentBase
     public double MultiplyDoubleMethod(double a, double b)
     {
         return a * b;
-        throw new NotImplementedException();
+        // throw new NotImplementedException();
     }
     /// <summary>
     /// Return a list of doubles
@@ -60,7 +60,8 @@ public class TestMethods : AssignmentBase
     /// <exception cref="NotImplementedException"></exception>
     public List<double> ListDoubleMethod()
     {
-        throw new NotImplementedException();
+        return new List<double>{};
+        // throw new NotImplementedException();
     }
     /// <summary>
     /// Return a single characther

@@ -72,7 +72,7 @@ public class TestMethods : AssignmentBase
     public char CharMethod(char c)
     {
         return c;
-        throw new NotImplementedException();
+        // throw new NotImplementedException();
     }
     /// <summary>
     /// Return a boolean that should be true
@@ -82,7 +82,9 @@ public class TestMethods : AssignmentBase
     /// <exception cref="NotImplementedException"></exception>
     public bool IsNotTrue(bool value)
     {
-        throw new NotImplementedException();
+        
+        return value;
+        // throw new NotImplementedException();
     }
     /// <summary>
     /// Return a boolean that should be false
@@ -92,6 +94,7 @@ public class TestMethods : AssignmentBase
     /// <exception cref="NotImplementedException"></exception>
     public bool IsNotFalse(bool value)
     {
+        return value;
         throw new NotImplementedException();
     }
     public List<Generics> GenericTypeMethod(Generics e, Generics t)

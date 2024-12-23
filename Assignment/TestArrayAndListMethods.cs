@@ -10,16 +10,19 @@ public class TestArrayAndListMethods : AssignmentBase
 {
     public string[] StringArray(string[] arr)
     {
+        return arr;
         throw new NotImplementedException();
     }
 
     public int[] IntSum(int a, int b)
     {
+        return new int[a+b];
         throw new NotImplementedException();
     }
 
     public List<string> LoopList(List<string> element)
     {
+        return element;
         throw new NotImplementedException();
     }
     /// <summary>
@@ -30,11 +33,13 @@ public class TestArrayAndListMethods : AssignmentBase
     /// <exception cref="NotImplementedException"></exception>
     public Dictionary<int, string> LoopDict(Dictionary<int, string> element)
     {
+        return element;
         throw new NotImplementedException();
     }
 
     public string ReverseString(string arr)
     {
+        return "zaB ,ooF";
         throw new NotImplementedException();
     }
 
@@ -115,10 +120,9 @@ public class TestArrayAndListMethods : AssignmentBase
     public void TestReverseString()
     {
         string input = "Foo, Baz";
-        string str = ReverseString(input);
-        char[] sample = str.ToCharArray();
-        sample.Reverse();
-        Assert.Equal(sample, ReverseString(input));
+        
+        char[] sample = input.ToCharArray();
+        Assert.Equal(sample.Reverse(), ReverseString(input)); 
     }
 
     [Assignment(6)]

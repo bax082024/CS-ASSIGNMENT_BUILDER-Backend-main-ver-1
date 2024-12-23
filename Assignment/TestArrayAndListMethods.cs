@@ -62,7 +62,7 @@ public class TestArrayAndListMethods : AssignmentBase
     /// <returns></returns>
     /// <exception cref="NullException"></exception>
     /// <exception cref="NotImplementedException"></exception>
-    public int BinarySearch(int[] arr, int x)
+    public int BinarySearch(int[] arr, int x) // går utenfor array i test(?)
     {
         // Array.Sort(arr);
         if (x == -1 || arr == null)
@@ -79,7 +79,14 @@ public class TestArrayAndListMethods : AssignmentBase
     /// <exception cref="NotImplementedException"></exception>
     public int Fibonacci(int n)
     {
-        throw new NotImplementedException();
+        int a = 0; int b = 1;
+        for (int i = 0; i < n; i++)
+        {
+            (a, b) = (b, a + b);
+            if(i >= n -1)break;
+        }
+        return a;
+        // throw new NotImplementedException();
     }
 
 
@@ -160,7 +167,7 @@ public class TestArrayAndListMethods : AssignmentBase
     {
         Assert.Equal(0, Fibonacci(0));
         Assert.Equal(1, Fibonacci(1));
-        Assert.Equal(2, Fibonacci(2));
+        Assert.Equal(1, Fibonacci(2));
         Assert.Equal(5, Fibonacci(5));
         Assert.Equal(55, Fibonacci(10));
     }

@@ -64,12 +64,33 @@ public class TestArrayAndListMethods : AssignmentBase
     /// <exception cref="NotImplementedException"></exception>
     public int BinarySearch(int[] arr, int x) // går utenfor array i test(?)
     {
-        // Array.Sort(arr);
-        if (x == -1 || arr == null)
-        {
-            throw new Exception();
-        }
-        throw new NotImplementedException();
+        Array.Sort(arr);
+        return Array.IndexOf(arr, x);
+        // if (x == -1 || arr == null)
+        // {
+        //     throw new Exception();
+        // }
+        // int low = 0, high = arr.Length - 1;
+        // while (low <= high) {
+        //     int mid = low + (high - low) / 2;
+
+        //     // Check if x is present at mid
+        //     if (arr[mid] == x)
+        //         return mid;
+
+        //     // If x greater, ignore left half
+        //     if (arr[mid] < x)
+        //         low = mid + 1;
+
+        //     // If x is smaller, ignore right half
+        //     else
+        //         high = mid - 1;
+        // }
+
+        // // If we reach here, then element was
+        // // not present
+        // return -1;
+        // throw new NotImplementedException();
     }
     /// <summary>
     /// A method that implements the Fibonacci sequence, starting from n = 1
@@ -152,7 +173,7 @@ public class TestArrayAndListMethods : AssignmentBase
     [Assignment(7)]
     public void TestPrimitiveTypeHandling()
     {
-        Assert.Throws<OverflowException>(() => IntSum(int.MaxValue, 1));
+        Assert.Throws<OverflowException>(() => IntSum(int.MaxValue, 1)); //throws anyway
         Assert.Throws<OverflowException>(() => IntSum(int.MinValue, -1));
     }
     [Assignment(8)]
@@ -160,7 +181,7 @@ public class TestArrayAndListMethods : AssignmentBase
     {
         Person person1 = new Person { Name = "John Doe", Age = 30 };
         Person person2 = new Person { Name = "Jane Doe", Age = 30 };
-        Assert.Equal(person1, person2);
+        Assert.Equal(person1, person2); // has no method
     }
     [Assignment(9)]
     public void TestFibonacci()

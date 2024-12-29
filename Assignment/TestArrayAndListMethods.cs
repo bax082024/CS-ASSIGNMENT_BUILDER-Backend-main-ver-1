@@ -65,32 +65,32 @@ public class TestArrayAndListMethods : AssignmentBase
     public int BinarySearch(int[] arr, int x) // går utenfor array i test(?)
     {
         Array.Sort(arr);
-        return Array.IndexOf(arr, x);
-        // if (x == -1 || arr == null)
-        // {
-        //     throw new Exception();
-        // }
-        // int low = 0, high = arr.Length - 1;
-        // while (low <= high) {
-        //     int mid = low + (high - low) / 2;
+        // return Array.IndexOf(arr, x);
+        if (x == -1 || arr == null)
+        {
+            throw new Exception();
+        }
+        int low = 0, high = arr.Length - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
 
-        //     // Check if x is present at mid
-        //     if (arr[mid] == x)
-        //         return mid;
+            // Check if x is present at mid
+            if (arr[mid] == x)
+                return mid;
 
-        //     // If x greater, ignore left half
-        //     if (arr[mid] < x)
-        //         low = mid + 1;
+            // If x greater, ignore left half
+            if (arr[mid] < x)
+                low = mid + 1;
 
-        //     // If x is smaller, ignore right half
-        //     else
-        //         high = mid - 1;
-        // }
+            // If x is smaller, ignore right half
+            else
+                high = mid - 1;
+        }
 
-        // // If we reach here, then element was
-        // // not present
-        // return -1;
-        // throw new NotImplementedException();
+        // If we reach here, then element was
+        // not present
+        return -1;
+        throw new NotImplementedException();
     }
     /// <summary>
     /// A method that implements the Fibonacci sequence, starting from n = 1
@@ -156,19 +156,24 @@ public class TestArrayAndListMethods : AssignmentBase
     [Assignment(6)]
     public void TestBinarySearchMethod()
     {
-        int[] expectedXValues = { 1, 2, 3, 4, 5, 6, 8, 9, 10, 25, 99, 91 };
+        int[] expectedXValues = { 1, 2, 3, 4, 5, 6, 8, 9, 10, 23, 24, 32, 48, 56, 64, 93, 128, 256, 512, 1024, 1213, 1440, 2048, 2414 };
         int[] samplePool = {
-            1,2,3,4,5,6,7,8,9,10,12,24,32,48,56,64,128,256,512,1024,2048, 1213, 1440, 2414, 93, 01, 23,
+            1,2,3,4,5,6,7,8,9,10,12,24,32,48,56,64,128,256,512,1024,2048, 1213, 1440, 2414, 93, 23,
         };
 
-        for (int i = 0; i < samplePool.Count(); i++)
+        Array.Sort(samplePool);
+        foreach (var value in expectedXValues)
         {
-            for (int j = 0; j < expectedXValues.Length; j++)
-            {
-                Assert.DoesNotContain(BinarySearch(samplePool, expectedXValues[i]), expectedXValues);
-                Assert.Equal(expectedXValues[j], BinarySearch(samplePool, expectedXValues[j]));
-            }
+            int result = BinarySearch(samplePool, value);
+            Assert.Equal(Array.IndexOf(samplePool, value), result);
         }
+        int[] nonExistingtValues = { -1, 15, 200, 3000 };
+        foreach (var value in nonExistingtValues)
+        {
+            int result = BinarySearch(samplePool, value);
+            Assert.Equal(-1, result);
+        }
+        
     }
     [Assignment(7)]
     public void TestPrimitiveTypeHandling()

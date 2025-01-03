@@ -13,6 +13,10 @@ public class TestDatastructures : AssignmentBase
         Doubles = [],
         Strings2d = [],
         Doubles2d = [],
+        Booleans = new bool[2],
+        Integers2d = new int[1][],
+        StringsList = new List<string>{},
+        KeyValuePairs = new Dictionary<int, string>{}
     };
 
 
@@ -34,7 +38,6 @@ public class TestDatastructures : AssignmentBase
     [Assignment(4)]
     public void ShouldBeBooleanArray()
     {
-        datastructures.Booleans = new bool[2]; // skulle dette være måten å gjøre det på hele veien tro?
         Assert.Equal(datastructures.Booleans, new bool[2]);
     }
     [Assignment(5)]
@@ -45,7 +48,6 @@ public class TestDatastructures : AssignmentBase
     [Assignment(6)]
     public void ShouldBe2DIntArray()
     {
-        datastructures.Integers2d = new int[1][];
         Assert.Equal(datastructures.Integers2d, new int[1][]);
     }
     [Assignment(7)]
@@ -56,13 +58,11 @@ public class TestDatastructures : AssignmentBase
     [Assignment(8)]
     public void ShouldBeListOfStrings()
     {
-        datastructures.StringsList = new List<string>{};
         Assert.Equal(new List<string>(), datastructures.StringsList);
     }
     [Assignment(9)]
     public void ShouldBeDictionaryOfIntAndStrings()
     {
-        datastructures.KeyValuePairs = new Dictionary<int, string>{};
         Assert.Equal(new Dictionary<int, string>(), datastructures.KeyValuePairs);
     }
 }

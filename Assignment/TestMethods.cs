@@ -26,7 +26,7 @@ public class TestMethods : AssignmentBase
     /// <exception cref="NotImplementedException"></exception>
     public string[] StringArrayMethod(string[] arr)
     {
-        return new string[255]; 
+        return arr;
         //throw new NotImplementedException();
     }
     /// <summary>

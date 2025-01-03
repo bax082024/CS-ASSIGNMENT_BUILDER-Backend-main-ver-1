@@ -64,33 +64,31 @@ public class TestArrayAndListMethods : AssignmentBase
     /// <exception cref="NotImplementedException"></exception>
     public int BinarySearch(int[] arr, int x) // går utenfor array i test(?)
     {
-        Array.Sort(arr);
-        // return Array.IndexOf(arr, x);
-        if (x == -1 || arr == null)
-        {
-            throw new Exception();
-        }
-        int low = 0, high = arr.Length - 1;
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
+        arr.Distinct();
+            
+            
+            
+            int low = 0, high = arr.Length - 1;
+            while (low <= high) {
+                int mid = low + (high -low) / 2;
 
-            // Check if x is present at mid
-            if (arr[mid] == x)
-                return mid;
+                // Check if x is present at mid
+                if (arr[mid] == x)
+                    return mid;
 
-            // If x greater, ignore left half
-            if (arr[mid] < x)
-                low = mid + 1;
+                // If x greater, ignore left half
+                if (arr[mid] < x)
+                    low = mid + 1;
 
-            // If x is smaller, ignore right half
-            else
-                high = mid - 1;
-        }
+                // If x is smaller, ignore right half
+                else
+                    high = mid - 1;
+            }
 
-        // If we reach here, then element was
-        // not present
-        return -1;
-        throw new NotImplementedException();
+            // If we reach here, then element was
+            // not present
+            return -1;
+            throw new NotImplementedException();
     }
     /// <summary>
     /// A method that implements the Fibonacci sequence, starting from n = 1
@@ -160,12 +158,13 @@ public class TestArrayAndListMethods : AssignmentBase
         int[] samplePool = {
             1,2,3,4,5,6,7,8,9,10,12,24,32,48,56,64,128,256,512,1024,2048, 1213, 1440, 2414, 93, 23,
         };
-
+        int pool = 0;
         Array.Sort(samplePool);
         foreach (var value in expectedXValues)
         {
             int result = BinarySearch(samplePool, value);
             Assert.Equal(Array.IndexOf(samplePool, value), result);
+            pool++;
         }
         int[] nonExistingtValues = { -1, 15, 200, 3000 };
         foreach (var value in nonExistingtValues)

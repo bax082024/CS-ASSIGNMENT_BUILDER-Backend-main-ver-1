@@ -18,9 +18,7 @@ public class AssignmentList : AssignmentListBase
     {
         /* Types skal inneholde en Typeof oppgavesettet man vil tracke. - John*/
         Types = [
-            typeof(TestMethods),
-            typeof(TestDatastructures),
-            typeof(TestArrayAndListMethods)
+          
         ];
     }
 }

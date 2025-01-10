@@ -28,15 +28,17 @@ public class TestPrimeNumbers : AssignmentBase
   /// <param name="limit"></param>
   /// <returns></returns>
   public List<int> GeneratePrimes(int limit)
-  {
+{
     List<int> primes = new List<int>();
     for (int i = 2; i <= limit; i++)
     {
-      if (IsPrime(i)) primes.Add(i);
+        if (IsPrime(i))
+        {
+            primes.Add(i);
+        }
     }
-    return false;
-
-  }
+    return primes;
+}
 
    [Assignment(1)]
     public void TestIsPrime()

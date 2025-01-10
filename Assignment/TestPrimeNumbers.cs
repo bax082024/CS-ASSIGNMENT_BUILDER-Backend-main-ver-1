@@ -38,4 +38,20 @@ public class TestPrimeNumbers : AssignmentBase
 
   }
 
+   [Assignment(1)]
+    public void TestIsPrime()
+    {
+      Assert.True(IsPrime(2));
+      Assert.True(IsPrime(3));
+      Assert.False(IsPrime(4));
+      Assert.True(IsPrime(5));
+    }
+
+     [Assignment(2)]
+    public void TestGeneratePrimes()
+    {
+      List<int> expectedPrimes = new List<int> { 2, 3, 5, 7, 11 };
+      Assert.Equal(expectedPrimes, GeneratePrimes(12));
+    }
+
 }

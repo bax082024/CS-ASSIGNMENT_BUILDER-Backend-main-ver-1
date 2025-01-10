@@ -15,7 +15,7 @@ public class TestMethods : AssignmentBase
     /// <exception cref="NotImplementedException"></exception>
     public string StringMethod(string str)
     {
-        throw new NotImplementedException();
+        return str;
     }
     /// <summary>
     /// Return a new string array
@@ -25,7 +25,7 @@ public class TestMethods : AssignmentBase
     /// <exception cref="NotImplementedException"></exception>
     public string[] StringArrayMethod(string[] arr)
     {
-        throw new NotImplementedException();
+        return arr;
     }
     /// <summary>
     /// Return the sum of a + b
@@ -47,7 +47,7 @@ public class TestMethods : AssignmentBase
     /// <exception cref="NotImplementedException"></exception>
     public double MultiplyDoubleMethod(double a, double b)
     {
-        throw new NotImplementedException();
+        return a + b;
     }
     /// <summary>
     /// Return a list of doubles
@@ -312,4 +312,39 @@ public class TestMethods : AssignmentBase
             }
         }
     }
+
+    [Assignment(15)]
+    public void TestPrimeNumbers()
+    {
+        List<int> expectedPrimes = new List<int> { 2, 3, 5, 7, 11 };
+        List<int> actualPrimes = GeneratePrimes(12);
+
+        Assert.Equal(expectedPrimes, actualPrimes);
+    }
+
+    // generate prime numbers
+    public List<int> GeneratePrimes(int limit)
+    {
+        List<int> primes = new List<int>();
+        for (int i = 2; i <= limit; i++)
+        {
+            if (IsPrime(i))
+            {
+                primes.Add(i);
+            }
+        }
+        return primes;
+    }
+
+    // check if number is prime
+    private bool IsPrime(int number)
+    {
+        if (number < 2) return false;
+        for (int i = 2; i <= Math.Sqrt(number); i++)
+        {
+            if (number % i == 0) return false;
+        }
+        return true;
+    }
+
 }

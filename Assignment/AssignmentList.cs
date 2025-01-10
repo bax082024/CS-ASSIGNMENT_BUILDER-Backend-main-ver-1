@@ -21,7 +21,8 @@ public class AssignmentList : AssignmentListBase
             typeof(TestMethods),
             typeof(TestDatastructures),
             typeof(TestArrayAndListMethods),
-            typeof(TDDTests)
+            typeof(TDDTests),
+            typeof(TestDatastructures)
         ];
     }
 }
